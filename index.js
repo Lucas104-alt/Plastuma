@@ -25,11 +25,13 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Bot Prendido!!!!!!');
+  res.end('Bot Prendido!!!!!!	');
 });
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
-
+client.on('error', (err) => {
+	console.log(err.message)
+ });
 client.login(token);
